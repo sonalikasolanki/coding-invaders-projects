@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Score Analysis</title>
+</head>
+<body>
+    <script>
+        // Define a hash table data structure
+        class HashTable {
+            constructor() {
+                this.table = {};
+            }
+            add(key, value) {
+                if (this.table[key]) {
+                    this.table[key] += value;
+                } else {
+                    this.table[key] = value;
+                }
+            }
+            get(key) {
+                return this.table[key] || 0;
+            }
+        }
+
+        // Function to capture score and store it in the hash table
+        function captureScore(scoreTable) {
+            const playerName = prompt("Enter the player's name:");
+            const score = parseFloat(prompt("Enter the score:"));
+
+            if (isNaN(score) || score < 0) {
+                alert("Invalid score! Please enter a valid non-negative number.");
+                return;
+            }
+
+            scoreTable.add(playerName, score);
+            alert(`Score of ${score} added for player "${playerName}".`);
+        }
+
+        // Function to get total score of a player from the hash table
+        function getScore(scoreTable) {
+            const playerName = prompt("Enter the player's name:");
+            const totalScore = scoreTable.get(playerName);
+
+            alert(`Total score of player "${playerName}" is ${totalScore}.`);
+        }
+
+        // Main function to handle the Score Analysis project
+        function scoreAnalysis() {
+            const scoreTable = new HashTable();
+            let continueAnalysis = true;
+
+            while (continueAnalysis) {
+                const choice = parseInt(prompt(
+                    "Menu:\n1. Capture Score\n2. Get Total Score of a Player"
+                ));
+
+                switch (choice) {
+                    case 1:
+                        captureScore(scoreTable);
+                        break;
+                    case 2:
+                        getScore(scoreTable);
+                        break;
+                    case 3:
+                        continueAnalysis = false;
+                        break;
+                    default:
+                        alert("Invalid choice! Please choose a valid option.");
+                }
+            }
+        }
+
+        // Call the scoreAnalysis function to start the application
+        scoreAnalysis();
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- 1. Initialize an array named keyIDs with the given values: [110, 107, 105, 100, 103, 102, 108, 104, 106, 109, 101].
+
+2. Initialize a variable named targetKey with the key ID to be searched, which is 102 in this case.
+
+3. Initialize a variable named position with -1, which will be used to store the position of the targetKey in the array.
+
+4. Start a loop that iterates through each element in the keyIDs array:
+   a. For each iteration, check if the current element is equal to the targetKey.
+   b. If the current element is equal to the targetKey, update the position variable with the current index and break out of the loop.
+   c. If the current element is not equal to the targetKey, continue to the next iteration.
+
+5. After the loop ends, check the value of the position variable:
+   a. If the value is -1, it means the targetKey was not found in the array. Display a message saying the key is not found.
+   b. If the value is not -1, it means the targetKey was found in the array. Display a message with the position of the key in the array, which is the value of the position variable.
+
+6. The search is complete, and the room can be unlocked using the key with ID 102 if it was found in the array.
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Linear Search for Key ID 102</title>
+ </head>
+ <body>
+     <script>
+         // Linear search function to find the position of the key with ID 102 in the array
+         function linearSearch(keyIDs, targetKey) {
+             for (let i = 0; i < keyIDs.length; i++) {
+                 if (keyIDs[i] === targetKey) {
+                     return i;
+                 }
+             }
+             return -1;
+         }
+ 
+         // Main function
+         function main() {
+             const keyIDs = [110, 107, 105, 100, 103, 102, 108, 104, 106, 109, 101];
+             const targetKey = 102;
+ 
+             const position = linearSearch(keyIDs, targetKey);
+ 
+             if (position !== -1) {
+                 alert(`Key with ID ${targetKey} found at position ${position}. Unlock the room.`);
+             } else {
+                 alert(`Key with ID ${targetKey} not found. The room cannot be unlocked.`);
+             }
+         }
+ 
+         // Call the main function to execute the linear search
+         main();
+     </script>
+ </body>
+ </html>
+ 

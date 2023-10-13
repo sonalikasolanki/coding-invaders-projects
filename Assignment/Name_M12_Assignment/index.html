@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="frame">
+  <h1>Age Calculator</h1>
+  <div class="main-container">
+ <div class="container-1">
+    <label for="date">Date (DD)</label>
+    <div class="input-container">
+    <input type="number" id="date" min="1" max="31">
+    <!-- <span id="dateError" class="error"></span> -->
+</div>
+</div>
+  <div class="container-2">
+  <label for="month">Month (MM)</label>
+  <div class="input-container">
+    <input type="number" id="month" min="1" max="12">
+      <!-- <span id="monthError" class="error"></span> -->
+  </div>
+</div>
+<div class="container-3">
+    <label for="year">Year (YYYY)</label>
+    <div class="input-container">
+    <input type="number" id="year" min="1">
+  <!-- <span id="yearError" class="error"></span> -->
+  </div>
+</div>
+</div>
+ <button id="submitBtn">Submit</button>
+   <!-- <p id="dateError"></p>
+   <p id="monthError"></p>
+   <p id="yearError"></p>
+   <p id="errorContainer"></p> -->
+   <div id="resultContainer"></div>
+  <script src="script.js"></script>
+</div>
+</body>
+</html>

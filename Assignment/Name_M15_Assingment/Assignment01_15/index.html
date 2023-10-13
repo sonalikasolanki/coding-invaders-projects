@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <script>
+        // Define a stack data structure
+        class Stack {
+            constructor() {
+                this.items = [];
+            }
+            push(item) {
+                this.items.push(item);
+            }
+            pop() {
+                if (!this.isEmpty()) {
+                    return this.items.pop();
+                }
+            }
+            isEmpty() {
+                return this.items.length === 0;
+            }
+            size() {
+                return this.items.length;
+            }
+            peek() {
+                return this.items[this.items.length - 1];
+            }
+        }
+
+        // Function to display the menu and get user choice
+        function displayMenu() {
+            const products = ["Milk", "Banana", "Chocolate", "Fruits", "Checkout"];
+            let menu = "Available Products:\n";
+            for (let i = 0; i < products.length; i++) {
+                menu += `${i + 1}. ${products[i]}\n`;
+            }
+            const choice = parseInt(prompt(menu));
+
+            if (choice >= 1 && choice <= products.length) {
+                return choice;
+            } else {
+                alert("Invalid choice! Please choose a valid option.");
+                return displayMenu();
+            }
+        }
+
+        // Main function to handle the shopping cart
+        function shoppingCart() {
+            const orders = new Stack();
+            let continueShopping = true;
+
+            while (continueShopping) {
+                const choice = displayMenu();
+
+                if (choice === 5) {
+                    // User chose Checkout option
+                    continueShopping = false;
+                } else {
+                    const selectedProduct = ["Milk", "Banana", "Chocolate", "Fruits"][choice - 1];
+                    orders.push(selectedProduct);
+                    alert(`${selectedProduct} added to cart.`);
+                }
+            }
+
+            // Display the final list of products and remove them from the cart
+            let cartContent = "Final List of Products:\n";
+            while (!orders.isEmpty()) {
+                const product = orders.pop();
+                cartContent += `${product}\n`;
+            }
+            alert(cartContent);
+        }
+
+        // Call the shoppingCart function to start shopping
+        shoppingCart();
+    </script>
+</body>
+</html>
+

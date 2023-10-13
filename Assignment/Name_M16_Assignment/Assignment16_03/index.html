@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary Search for Product ID 19</title>
+</head>
+<body>
+    <script>
+        // Binary search function to find the position of the product with ID 19 in the array
+        function binarySearch(productIDs, targetProduct) {
+            let left = 0;
+            let right = productIDs.length - 1;
+
+            while (left <= right) {
+                const mid = Math.floor((left + right) / 2);
+                const midProductID = productIDs[mid];
+
+                if (midProductID === targetProduct) {
+                    return mid; // Found the product ID
+                } else if (midProductID < targetProduct) {
+                    left = mid + 1; // Target is in the right half of the array
+                } else {
+                    right = mid - 1; // Target is in the left half of the array
+                }
+            }
+
+            return -1; // Product ID not found
+        }
+
+        // Main function
+        function main() {
+            const productIDs = [10, 12, 15, 19, 24, 28, 30, 45, 50, 65, 77, 99];
+            const targetProduct = 19;
+
+            const position = binarySearch(productIDs, targetProduct);
+
+            if (position !== -1) {
+                alert(`Product with ID ${targetProduct} found at position ${position}.`);
+            } else {
+                alert(`Product with ID ${targetProduct} is out of stock.`);
+            }
+        }
+
+        // Call the main function to execute the binary search
+        main();
+    </script>
+</body>
+</html>
+
+<psuedo-code----></psuedo-code---->
+<!-- 1. Initialize the productIDs array with the given values: [10, 12, 15, 19, 24, 28, 30, 45, 50, 65, 77, 99].
+
+2. Initialize the targetProduct with the product ID to be searched, which is 19 in this case.
+
+3. Initialize the left pointer to 0 and the right pointer to the last index of the productIDs array.
+
+4. Start a loop that continues until the left pointer is less than or equal to the right pointer:
+   a. Calculate the mid pointer as the average of the left and right pointers: mid = (left + right) / 2.
+   b. If the productIDs[mid] is equal to the targetProduct, return mid as the position of the product.
+   c. If the productIDs[mid] is less than the targetProduct, set the left pointer to mid + 1 to search the right half of the array.
+   d. If the productIDs[mid] is greater than the targetProduct, set the right pointer to mid - 1 to search the left half of the array.
+
+5. If the loop ends and the targetProduct is not found, display "Out of stock".
+ -->
+

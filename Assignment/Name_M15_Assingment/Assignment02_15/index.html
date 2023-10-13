@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Cast Section </title>
+</head>
+<body>
+    <script>
+        // Define a stack data structure
+        class Stack {
+            constructor() {
+                this.items = [];
+            }
+            push(item) {
+                this.items.push(item);
+            }
+            pop() {
+                if (!this.isEmpty()) {
+                    return this.items.pop();
+                }
+            }
+            isEmpty() {
+                return this.items.length === 0;
+            }
+            size() {
+                return this.items.length;
+            }
+            peek() {
+                return this.items[this.items.length - 1];
+            }
+        }
+
+        // Function to add a new cast member to the stack
+        function addCastMember(castStack) {
+            const newMember = prompt("Enter the name of the new cast member:");
+            castStack.push(newMember);
+            alert(`${newMember} added to the cast.`);
+        }
+
+        // Function to show the cast members stored in the stack
+        function showCast(castStack) {
+            let castList = "Movie Cast Members:\n";
+            while (!castStack.isEmpty()) {
+                castList += `${castStack.pop()}\n`;
+            }
+            alert(castList);
+        }
+
+        // Main function to handle the movie cast section
+        function movieCastSection() {
+            const castStack = new Stack();
+            let continueAdding = true;
+
+            while (continueAdding) {
+                const choice = parseInt(prompt(
+                    "Menu:\n1. Add a new cast member\n2. Show cast members."
+                ));
+
+                switch (choice) {
+                    case 1:
+                        addCastMember(castStack);
+                        break;
+                    case 2:
+                        showCast(castStack);
+                        break;
+                    case 3:
+                        continueAdding = false;
+                        break;
+                    default:
+                        alert("Invalid choice! Please choose a valid option.");
+                }
+            }
+        }
+
+        // Call the movieCastSection function to start working with the movie cast
+        movieCastSection();
+    </script>
+</body>
+</html>

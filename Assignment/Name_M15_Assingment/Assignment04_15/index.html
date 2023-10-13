@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Statement </title>
+</head>
+<body>
+    <script>
+        // Define a queue data structure
+        class Queue {
+            constructor() {
+                this.items = [];
+            }
+            enqueue(item) {
+                this.items.push(item);
+            }
+            dequeue() {
+                if (!this.isEmpty()) {
+                    return this.items.shift();
+                }
+            }
+            isEmpty() {
+                return this.items.length === 0;
+            }
+            size() {
+                return this.items.length;
+            }
+            front() {
+                return this.items[0];
+            }
+        }
+
+        // Global variable to store credit balance (Rs. 25,000 by default)
+        let creditBalance = 25000;
+
+        // Function to perform a purchase and add the amount to the queue
+        function purchase(creditQueue) {
+            const amount = parseFloat(prompt("Enter the purchase amount:"));
+
+            if (isNaN(amount) || amount <= 0) {
+                alert("Invalid amount! Please enter a valid positive number.");
+                return;
+            }
+
+            if (amount > creditBalance) {
+                alert("Insufficient credit balance! Purchase cannot be completed.");
+                return;
+            }
+
+            creditQueue.enqueue(amount);
+            creditBalance -= amount;
+            alert(`Purchase of Rs. ${amount.toFixed(2)} has been successfully made.`);
+        }
+
+        // Function to check available balance
+        function checkAvailableBalance() {
+            alert(`Available Balance: Rs. ${creditBalance.toFixed(2)}`);
+        }
+
+        // Function to view all transactions made by the user
+        function viewTransactions(creditQueue) {
+            if (creditQueue.isEmpty()) {
+                alert("No transactions made yet.");
+                return;
+            }
+
+            let transactions = "Transaction History:\n";
+
+            for (const amount of creditQueue.items) {
+                transactions += `Rs. ${amount.toFixed(2)}\n`;
+            }
+
+            alert(transactions);
+        }
+
+        // Main function to handle the Credit Card Statement application
+        function creditCardStatement() {
+            const creditQueue = new Queue();
+            let continueOperations = true;
+
+            while (continueOperations) {
+                const choice = parseInt(prompt(
+                    "Menu:\n1. Purchase\n2. Check Available Balance\n3. View Transactions."
+                ));
+
+                switch (choice) {
+                    case 1:
+                        purchase(creditQueue);
+                        break;
+                    case 2:
+                        checkAvailableBalance();
+                        break;
+                    case 3:
+                        viewTransactions(creditQueue);
+                        break;
+                    case 4:
+                        continueOperations = false;
+                        break;
+                    default:
+                        alert("Invalid choice! Please choose a valid option.");
+                }
+            }
+        }
+
+        // Call the creditCardStatement function to start the application
+        creditCardStatement();
+    </script>
+</body>
+</html>

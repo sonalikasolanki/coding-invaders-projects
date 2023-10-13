@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Ticket Booking</title>
+</head>
+<body>
+    <script>
+        // Define a queue data structure
+        class Queue {
+            constructor() {
+                this.items = [];
+            }
+            enqueue(item) {
+                this.items.push(item);
+            }
+            dequeue() {
+                if (!this.isEmpty()) {
+                    return this.items.shift();
+                }
+            }
+            isEmpty() {
+                return this.items.length === 0;
+            }
+            size() {
+                return this.items.length;
+            }
+            front() {
+                return this.items[0];
+            }
+        }
+
+        // Function to generate a random ticket ID
+        function generateTicketID() {
+            return Math.floor(Math.random() * 1000000) + 1;
+        }
+
+        // Function to book a ticket and add user details to the array and ticket ID to the queue
+        function bookTicket(usersArray, ticketsQueue) {
+            const name = prompt("Enter your name:");
+            const fromCity = prompt("Enter your from city:");
+            const toCity = prompt("Enter your to city:");
+
+            const ticketID = generateTicketID();
+            const userDetails = {
+                name: name,
+                fromCity: fromCity,
+                toCity: toCity,
+                ticketID: ticketID
+            };
+
+            usersArray.push(userDetails);
+            ticketsQueue.enqueue(ticketID);
+
+            alert(`Ticket booked successfully! Your Ticket ID: ${ticketID}`);
+        }
+
+        // Function to search for user details by ticket ID
+        function searchUser(usersArray, ticketsQueue) {
+            const ticketIDToSearch = parseInt(prompt("Enter your Ticket ID to search for details:"));
+            let foundUserDetails = "User Details:\n";
+
+            for (const user of usersArray) {
+                if (user.ticketID === ticketIDToSearch) {
+                    foundUserDetails += `Name: ${user.name}\nFrom City: ${user.fromCity}\nTo City: ${user.toCity}\nTicket ID: ${user.ticketID}`;
+                    break;
+                }
+            }
+
+            alert(foundUserDetails);
+        }
+
+        // Main function to handle the bus ticket booking application
+        function busTicketBooking() {
+            const usersArray = [];
+            const ticketsQueue = new Queue();
+            let continueBooking = true;
+
+            while (continueBooking) {
+                const choice = parseInt(prompt(
+                    "Menu:\n1. Book a ticket\n2. Search for user details by Ticket ID."
+                ));
+
+                switch (choice) {
+                    case 1:
+                        bookTicket(usersArray, ticketsQueue);
+                        break;
+                    case 2:
+                        searchUser(usersArray, ticketsQueue);
+                        break;
+                    case 3:
+                        continueBooking = false;
+                        break;
+                    default:
+                        alert("Invalid choice! Please choose a valid option.");
+                }
+            }
+        }
+
+        // Call the busTicketBooking function to start the application
+        busTicketBooking();
+    </script>
+</body>
+</html>

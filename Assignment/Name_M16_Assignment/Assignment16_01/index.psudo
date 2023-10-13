@@ -1,0 +1,16 @@
+1. Read the total bill amount (billAmount) from the user.
+
+2. Initialize a variable named discountAmount to 0.
+
+3. Check the following conditions in order:
+   a. If billAmount > 5000:
+      - Calculate the discountAmount as 20% of billAmount.
+   b. Else if billAmount > 3000:
+      - Calculate the discountAmount as 15% of billAmount.
+   c. Else if billAmount > 2000:
+      - Calculate the discountAmount as 10% of billAmount.
+
+4. Calculate the finalAmount after subtracting the discountAmount from the billAmount:
+   finalAmount = billAmount - discountAmount
+
+5. Display the finalAmount as the result after applying the discount.

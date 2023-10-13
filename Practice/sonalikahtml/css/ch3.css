@@ -1,0 +1,125 @@
+html {
+	font-family: "Open Sans", sans-serif;
+	background-color: #FAFAFA !important;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	font-size: 1rem;
+	background-color: #dddddd;
+}
+
+p {
+	font-size: 1rem;
+}
+
+.class4 {
+	font-size: 1.2rem;
+	color: blue;
+}
+
+.class1 {
+	font-weight: 400;
+	text-decoration: underline;
+}
+
+.class2 {
+	font-weight: 800;
+	border: 1px solid black;
+	margin: 1rem;
+}
+
+.class5 {
+	border: 1px solid red;
+	margin: 2rem;
+}
+
+.class3 {
+	border: 5px solid black;
+	font-weight: 200;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+    word-spacing: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: start;
+    text-indent: 20px;
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box; 
+    height: 60px;
+}
+/* box sizing border box means height property includes both padding and border width h*/
+
+#id1 {
+	color: red;
+}
+
+.outer{
+	color: grey;
+}
+
+.outer > p:nth-child(2){
+	color: yellow;
+}
+
+.outer > div > p {
+	font-style: italic;
+}
+
+.outer h1{
+	text-decoration: underline;
+}
+
+div.background-img {
+	height: 1000px;
+    border: 1px solid #ddd;
+    background-color: wheat;
+    background-image: url(../images/sona.JPG);
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+}
+.name1 > p {
+	color: hotpink;
+	border: 2px solid black;
+	background-color:whitesmoke;
+	margin: 10px;
+	padding: 5px;
+	/*display: none;*/
+	/*display: inline;
+	display: inline-block;*/	
+}
+.name1 >p:first-child:first-letter{
+    font-size: 24px;
+
+    /*float: left;*/
+}
+.name1>p:before{
+	content: "hello";
+	font-size: 24px;
+	color: blue;
+	
+}
+/*
+.heading {
+	color: red;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.para {
+	color: green;
+}*/

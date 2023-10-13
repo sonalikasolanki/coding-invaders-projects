@@ -1,0 +1,25 @@
+
+.h1{
+        display: flex;
+        text-align: center;
+        color: black;
+        font-family: sen;
+        flex-direction: row;
+        
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+#image{
+width: auto;
+display: flexbox;
+}
+#content{
+    width: 10px;
+}
+

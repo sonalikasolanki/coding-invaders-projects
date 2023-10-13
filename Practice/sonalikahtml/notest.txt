@@ -1,0 +1,40 @@
+Different parts of http request: 
+	https://gavilan.blog/2019/01/03/anatomy-of-an-http-request/
+	https://www.ibm.com/docs/en/cics-ts/5.3?topic=protocol-http-requests
+
+- What happens when you type a URL in the browser and press enter?
+	1. https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a
+	2. https://www.geeksforgeeks.org/what-happens-when-we-type-a-url/
+ 
+css selectors : http://web.simmons.edu/~grabiner/comm244/weekfour/selectors.html
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
+
+best css link: https://css-tricks.com/almanac/properties/b/background-size/
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+ - Html assignment for practice.
+
+
+
+
+ https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
+
+ https://www.w3schools.com/w3css/tryw3css_templates_architect.htm
+ https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
+ https://www.w3schools.com/w3css/tryw3css_templates_fashion_blog.htm
+
+ https://www.w3schools.com/w3css/tryw3css_templates_website.htm#contact
+
+
+ https://www.geeksforgeeks.org/difference-between-var-let-and-const-keywords-in-javascript/
+ https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc
+ https://medium.com/infancyit/javascript-object-manipulation-5d1145cf06ef
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+ https://kkirtigoel01.medium.com/promises-in-javascript-js-27baf0e506b5
+ https://www.geeksforgeeks.org/how-to-avoid-callback-hell-in-node-js/
+
+
+ react===
+ https://reactjs.org/tutorial/tutorial.html

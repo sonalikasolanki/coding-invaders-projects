@@ -1,0 +1,13 @@
+let text = "In the park, you can see a peacock, rabbit, squirrel and a parrot.";
+let peacockIndex = text.indexOf("peacock");
+ let rabbitIndex = text.indexOf("rabbit");
+ let squirrelIndex = text.indexOf("squirrel");
+ let parrotIndex = text.indexOf("parrot");
+ let peacock = text.slice(peacockIndex, peacockIndex + 7);
+  let rabbit = text.slice(rabbitIndex, rabbitIndex + 6);
+let squirrel = text.slice(squirrelIndex, squirrelIndex + 8);
+ let parrot = text.slice(parrotIndex, parrotIndex + 6);
+ console.log(peacock.toUpperCase());
+ console.log(rabbit.toUpperCase());
+ console.log(squirrel.toUpperCase());
+console.log(parrot.toUpperCase());
